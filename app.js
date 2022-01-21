@@ -5,9 +5,11 @@ const express = require('express');
 const app = express();
 const { PORT } = process.env;
 
+app.use(express.json());
+
 const experiencesRouter = require('./app/routes/experiences-routes');
-const usersRouter = require('./app/routes/experiences-routes');
-const bookingsRouter = require('./app/routes/experiences-routes');
+const usersRouter = require('./app/routes/users-routes');
+const bookingsRouter = require('./app/routes/bookings-routes');
 
 
 app.use('/api/v1/experiences', experiencesRouter);

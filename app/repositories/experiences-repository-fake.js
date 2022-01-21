@@ -1,6 +1,6 @@
 "use strict";
 
-const bookings = [{
+const experiences = [{
     id: 1,
     name: 'Horseback Riding',
     city: 'Lugo',
@@ -22,13 +22,17 @@ const bookings = [{
     description: 'Our Surf School is located in Corrubedo, a beautiful region of Ribeira that enjoys a spectacular natural environment, ideal for any sport.'
 }]
 
-function findAllBookings() {
-    //const sql='SELECT'
-    return bookings;
+function findAllExperiences() {
+    //const sql='SELECT * FROM experiences';
+    return experiences;
+}
+
+function findExperienceById(id) {
+    //const sql='SELECT * FROM experiences WHERE id = id';
+    return experiences.find(experience => experience.id === +id);
 }
 
 module.exports = {
-    findAllBookings,
-    // createBooking
-    // deleteBooking
+    findAllExperiences,
+    findExperienceById,
 }

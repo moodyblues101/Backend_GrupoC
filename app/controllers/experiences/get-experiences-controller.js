@@ -1,5 +1,6 @@
 "use strict";
 
+const createJsonError = require("../../errors/create-json-error");
 const { findAllExperiences } = require("../../repositories/experiences-repository");
 
 async function getExperiences(req, res) {
@@ -9,7 +10,7 @@ async function getExperiences(req, res) {
         res.status(200);
         res.send({ experiencesData: experiences });
     } catch (error) {
-        console.log(error);
+        createJsonError(error, res);
     }
 }
 
